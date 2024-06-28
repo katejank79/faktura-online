@@ -9,6 +9,7 @@ const randomEmail = generateRandomEmail();
 
 class LibLogin {
     login(inputEmail) {
+        cy.visit('https://cy.fakturaonline.cz/');
         Login.buttonSignInMainMenu().click().wait(1000);
         Login.inputTrialEmail().type(randomEmail);
         Login.buttonTry().click();
