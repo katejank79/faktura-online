@@ -26,9 +26,7 @@ describe('Vystavení fakturu', () => {
     it('3. Vytvor fakturu tebou vytvorenemu kontaktu', () => {
 
 
-
     })
 })
 
-})
 ;
