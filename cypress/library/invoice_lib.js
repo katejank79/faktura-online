@@ -9,7 +9,7 @@ class LibInvoice {
         Invoice.invPaymentMethod().click();
         Invoice.invDueDateSelect(paymentMethod).click({force: true});
         Invoice.inputBankAccountNumber().clear().type(bankAccountNumber);
-        Invoice.checkboxShowIBAN().check({ force: true }).wait(200);
+        Invoice.checkboxShowIBAN().check({ force: true }).wait(3000);
         Invoice.inputIBAN().clear().type(IBAN);
         Invoice.inputSWIFTcode().clear().type(SWIFT);
 
@@ -42,9 +42,10 @@ class LibInvoice {
         Invoice.issueItemDescription().clear().type(issueItemDescription);
         Invoice.issueItemVATRate15().click({force: true});
         Invoice.issueItemPrice().clear().type(issueItemPrice);
+    };
 
-
-
+    creatingNewInvoice() {
+        Invoice.iconNewInvoiceCreate.eq(2).click({force: true});
     }
 
     verifyDownloadTasks() {

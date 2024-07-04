@@ -58,7 +58,10 @@ buttonIssueAndSend = () => cy.get('[data-test="show_submit_dialog"]');
 buttonSaveDraft = () => cy.get('[data-test="save_invoice"]');
 buttonIssueAndDownload = () => cy.get('[data-test="save_download_invoice"]');
 
+inputRecipientEmail = () => cy.get('[data-test="recipient_email"]');
+buttonSendEmail = () => cy.get('[data-test="submit_form"]');
 
+iconNewInvoiceCreate = () => cy.get('.icon-new-invoice');
 }
 
 module.exports = new Invoice();

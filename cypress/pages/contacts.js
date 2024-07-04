@@ -13,6 +13,9 @@ class Contacts {
 
     buttonContactSaveChanges = () => cy.get('[data-test="save-contact"]');
 
+    tableRow = (companyName) => cy.contains('.el-table__row', companyName);
+    buttonDeleteRow = (companyName) => this.tableRow(companyName).find('[data-test="delete_contact"]');
+
 
 
 
