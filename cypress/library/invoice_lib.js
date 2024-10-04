@@ -42,14 +42,21 @@ class LibInvoice {
         Invoice.issueItemDescription().clear().type(issueItemDescription);
         Invoice.issueItemVATRate15().click({force: true});
         Invoice.issueItemPrice().clear().type(issueItemPrice);
+        Invoice.buttonIssueAndSend().click();
     };
 
     creatingNewInvoice() {
-        Invoice.iconNewInvoiceCreate.eq(2).click({force: true});
+        Invoice.iconNewInvoiceCreate().click({force: true});
     }
 
     verifyDownloadTasks() {
         cy.verifyDownload('.pdf', {contains:true})
+    }
+
+    addingLogo() {
+        Invoice.buttonShowSettings().click();
+        Invoice.buttonInsertFile().selectFile('cypress/fixtures/zuby.jpeg',{force:true}).wait(3000);
+        //Invoice.buttonConfirmSelection().click();
     }
 
 }

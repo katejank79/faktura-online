@@ -20,7 +20,10 @@ invLanguage = () => cy.get('[data-test="choose_language"]');
 invColorBlue = () => cy.get('[data-test="invoice_color-blue"]');
 invDesignModern = () => cy.get('[data-test="invoice_appearance_modern"]');
 inputRegistrInformation = () => cy.get('[data-test="note"]');
+
+buttonShowSettings = () => cy.get('[data-analytics-id="form.invoiceForm.${showSettings ? hide : show}Settings"]');
 buttonInsertFile = () => cy.get('[data-test="file_upload-logo"]').find('input');
+buttonConfirmSelection = () => cy.contains('Potvrdit');
 
 
 
@@ -61,7 +64,7 @@ buttonIssueAndDownload = () => cy.get('[data-test="save_download_invoice"]');
 inputRecipientEmail = () => cy.get('[data-test="recipient_email"]');
 buttonSendEmail = () => cy.get('[data-test="submit_form"]');
 
-iconNewInvoiceCreate = () => cy.get('.icon-new-invoice');
+iconNewInvoiceCreate = () => cy.contains('button', 'Vystavit fakturu');
 }
 
 module.exports = new Invoice();

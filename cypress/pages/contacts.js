@@ -1,5 +1,5 @@
 class Contacts {
-    buttonContacts = () => cy.get('.navbar-navigation__link--contact');
+    buttonContacts = () => cy.contains('button','Kontakty');
     buttonAddContact = () => cy.get('[data-test="add-contact-button"]');
 
     contactName = () => cy.get('[data-test="invoice_attributes_name"]');
